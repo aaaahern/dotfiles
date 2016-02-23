@@ -50,10 +50,11 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git z)
 
 # User configuration
 
+export PATH=/usr/local/scala/bin:$PATH
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -81,7 +82,7 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias zshconfig="subl ~/.zshrc"
+alias zshconfig="gvim ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias vimconfig="gvim ~/.vimrc"
 alias grep="grep --color=auto"
@@ -89,6 +90,9 @@ alias cls="clear"
 alias ll="ls -l"
 alias la="ls -a"
 alias gvim='/Applications/Macvim.app/Contents/MacOS/Vim -g'
+alias sml='/usr/local/smlnj/bin/sml'
+
+alias logincims='ssh yz3015@access.cims.nyu.edu'
 
 alias -s adb=subl
 alias -s ads=subl

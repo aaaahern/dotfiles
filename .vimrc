@@ -1,6 +1,8 @@
 "<leader>
 let mapleader=";"
 
+let g:cpp_class_scope_highlight = 1
+
 " a.vim
 " interchange between .cpp and .h
 nmap <Leader>ch :A<CR>
@@ -55,8 +57,8 @@ set encoding=utf-8
 set fileencodings=utf-8,ucs-bom,shift-jis,gb18030,gbk,gb2312,cp936,utf-16,big5,euc-jp,latin1
 " 编码设置
 
-set background=dark
-colorscheme solarized
+set bg=dark
+"colorscheme solarized
 "colorscheme molokai
 " 设置颜色主题
 
@@ -119,8 +121,8 @@ set guioptions-=r
 set guioptions-=R
 
 " 高亮显示当前行/列
-set cursorline
-set cursorcolumn
+"set cursorline
+"set cursorcolumn
 
 " 设置状态栏主题风格
 let g:Powerline_colorscheme='solarized256'
@@ -149,6 +151,7 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'fholgado/minibufexpl.vim'
 Plugin 'rizzatti/dash.vim'
+Plugin 'octol/vim-cpp-enhanced-highlight'
 " plugin from http://vim-scripts.org/vim/scripts.html
 "Plugin 'L9'
 " Git plugin not hosted on GitHub
@@ -199,3 +202,6 @@ map <Leader>bl :MBEToggle<cr>
 " buffer 切换快捷键
 map <C-Tab> :MBEbn<cr>
 map <C-S-Tab> :MBEbp<cr>
+
+" 自动补全花括号
+imap ]] {<esc>o}<esc>:let leavechar="}"<cr>O
