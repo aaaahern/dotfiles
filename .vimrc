@@ -152,6 +152,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'fholgado/minibufexpl.vim'
 Plugin 'rizzatti/dash.vim'
 Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'drmikehenry/vim-headerguard'
 " plugin from http://vim-scripts.org/vim/scripts.html
 "Plugin 'L9'
 " Git plugin not hosted on GitHub
@@ -205,3 +206,12 @@ map <C-S-Tab> :MBEbp<cr>
 
 " 自动补全花括号
 imap ]] {<esc>o}<esc>:let leavechar="}"<cr>O
+
+function! s:insert_gates()
+	let gatename = substitute(toupper(expand("%:t")), "\\.", "_", "g")
+	execute "normal! i#ifndef " . gatename
+	execute "normal! o#define " . gatename . " "
+	execute "normal! Go#endif /* " . gatename . " */"
+	normal! kk
+endfunction
+autocmd BufNewFile *.{h,hpp} call <SID>insert_gates()
