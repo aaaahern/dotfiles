@@ -93,10 +93,22 @@ alias gvim='/Applications/Macvim.app/Contents/MacOS/Vim -g'
 alias sml='/usr/local/smlnj/bin/sml'
 
 alias logincims='ssh yz3015@access.cims.nyu.edu'
+alias loginmininet='ssh mininet@192.168.56.101'
+
+alias checkseattle='ps Aww | grep nmmain.py | grep -v grep'
 
 alias -s adb=subl
 alias -s ads=subl
 
+alias wttr="curl wttr.in\?m"
+
+# Git
+alias gitaa='git add --all'
+alias gitcm='git commit -m'
+
 #Ada gnatmake path
 PATH=/usr/local/gnat/bin:$PATH;export PATH
 PATH=/Users/Yuheng/bin:$PATH;export PATH
+
+
+export MACOSX_DEPLOYMENT_TARGET=10.11
