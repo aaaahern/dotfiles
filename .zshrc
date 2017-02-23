@@ -112,3 +112,10 @@ PATH=/Users/Yuheng/bin:$PATH;export PATH
 
 
 export MACOSX_DEPLOYMENT_TARGET=10.11
+
+#GOPATH
+export GOPATH=$HOME/Programming/aaaahern-golabs-2016
+
+#q and AQuery
+export PATH=$PATH:$HOME/q/m32
+export PATH=$PATH:$HOME/Programming/aquery

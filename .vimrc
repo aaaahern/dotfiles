@@ -17,10 +17,6 @@ nmap <Leader>wl <C-W>l
 syntax on
 " 语法高亮
 
-autocmd InsertLeave * se nocul
-autocmd InsertEnter * se cul
-" 用浅色高亮当前行
-
 set smartindent
 " 智能对齐
 
@@ -36,9 +32,6 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 "  统一缩进为4
-
-set noexpandtab
-" 不要用空格代替制表符
 
 set number
 " 显示行号
@@ -57,19 +50,7 @@ set encoding=utf-8
 set fileencodings=utf-8,ucs-bom,shift-jis,gb18030,gbk,gb2312,cp936,utf-16,big5,euc-jp,latin1
 " 编码设置
 
-set bg=dark
-"colorscheme solarized
-"colorscheme molokai
-" 设置颜色主题
-
-"set guifont=Menlo:h16:cANSI
-" 设置字体
-
-set langmenu=zn_CN.UTF-8
-set helplang=cn
-" 语言设置
-
-set cmdheight=2
+set cmdheight=1
 " 命令行（在状态行）的高度，默认为1,这里是2
 
 set ruler
@@ -96,7 +77,7 @@ set autowrite
 set wildmenu
 " 增强模式中的命令行自动完成操作
 
-set linespace=2
+set linespace=0
 " 字符间插入的像素行数目
 
 set whichwrap=b,s,<,>,[,]
@@ -124,9 +105,6 @@ set guioptions-=R
 "set cursorline
 "set cursorcolumn
 
-" 设置状态栏主题风格
-let g:Powerline_colorscheme='solarized256'
-
 
 " Vundle setting-----------------------------
 set nocompatible              " be iMproved, required
@@ -144,7 +122,11 @@ Plugin 'VundleVim/Vundle.vim'
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
-Plugin 'Lokaltog/vim-powerline'
+
+Plugin 'dikiaap/minimalist'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+
 Plugin 'Mizuchi/STL-Syntax'
 Plugin 'vim-scripts/a.vim'
 Plugin 'scrooloose/nerdcommenter'
@@ -214,4 +196,32 @@ function! s:insert_gates()
 	execute "normal! Go#endif /* " . gatename . " */"
 	normal! kk
 endfunction
-autocmd BufNewFile *.{h,hpp} call <SID>insert_gates()
+
+"autocmd BufNewFile *.{h,hpp} call <SID>insert_gates()
+
+set t_Co=256
+set background=dark
+colorscheme minimalist
+let g:airline_theme='simple'
+let g:airline_powerline_fonts = 1
+set guifont=Source\ Code\ Pro\ for\ Powerline:h14
+if !exists('g:airline_symbols')
+	let g:airline_symbols = {}
+endif
+
+" unicode symbols
+let g:airline_left_sep = '»'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '«'
+let g:airline_right_sep = '◀'
+let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.linenr = '␤'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.whitespace = 'Ξ'
+
+execute pathogen#infect()
+
