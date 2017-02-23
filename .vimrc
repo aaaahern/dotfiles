@@ -226,8 +226,6 @@ let g:airline_symbols.paste = 'Þ'
 let g:airline_symbols.paste = '∥'
 let g:airline_symbols.whitespace = 'Ξ'
 
-execute pathogen#infect()
-
 nmap <Leader>tbt :TagbarToggle<CR>
 nmap <Leader>tb :TagbarOpenAutoClose<CR>
 
