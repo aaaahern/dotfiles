@@ -228,4 +228,7 @@ let g:airline_symbols.whitespace = 'Ξ'
 
 execute pathogen#infect()
 
-nmap <Leader>ft :TagbarToggle<CR>
+nmap <Leader>tbt :TagbarToggle<CR>
+nmap <Leader>tb :TagbarOpenAutoClose<CR>
+
+nmap <Leader>be :MBEFocus<CR>
