@@ -123,7 +123,7 @@ Plugin 'VundleVim/Vundle.vim'
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
 
-Plugin 'dikiaap/minimalist'
+Plugin 'aaaahern/minimalist'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
@@ -135,6 +135,9 @@ Plugin 'fholgado/minibufexpl.vim'
 Plugin 'rizzatti/dash.vim'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'drmikehenry/vim-headerguard'
+
+Plugin 'majutsushi/tagbar'
+
 " plugin from http://vim-scripts.org/vim/scripts.html
 "Plugin 'L9'
 " Git plugin not hosted on GitHub
@@ -225,3 +228,4 @@ let g:airline_symbols.whitespace = 'Ξ'
 
 execute pathogen#infect()
 
+nmap <Leader>ft :TagbarToggle<CR>
