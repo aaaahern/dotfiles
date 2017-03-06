@@ -226,7 +226,7 @@ let g:airline_symbols.paste = 'Þ'
 let g:airline_symbols.paste = '∥'
 let g:airline_symbols.whitespace = 'Ξ'
 
-nmap <Leader>tbt :TagbarToggle<CR>
-nmap <Leader>tb :TagbarOpenAutoClose<CR>
+nmap <Leader>tb :TagbarToggle<CR>
+nmap <Leader>tt :TagbarOpenAutoClose<CR>
 
 nmap <Leader>be :MBEFocus<CR>
